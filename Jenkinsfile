@@ -9,22 +9,17 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building application'
+                sh 'docker build -t mywebsite .'
             }
         }
 
-        stage('Test') {
+        stage('Run Container') {
             steps {
-                echo 'Running tests'
+                sh 'docker run -d -p 8090:80 --name mycontainer mywebsite'
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying app'
-            }
-        }
     }
 }
