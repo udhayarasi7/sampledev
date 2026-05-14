@@ -7,3 +7,4 @@ host fixed
 host error fixed
 poll test
 docker mounted
+docker permission solved
