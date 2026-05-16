@@ -1,0 +1,22 @@
+name: DevOps Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Show Files
+        run: ls
+
+      - name: Build Complete
+        run: echo "Pipeline Success"
